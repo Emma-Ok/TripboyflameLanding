@@ -1,37 +1,10 @@
 
----
-import { type NavItem } from "src/types";
 
-const navItems: Array<NavItem> = [
-    { title: "Features", url: "#features" },
-    { title: "Compatibility", url: "#compatibility" },
-    { title: "Showcase", url: "#showcase" },
-  ];
----
-
-<header class="max-w-[1440px] mx-auto flex items-center justify-between p-8 bg-black text-white">
-    <img src="./logotrip.jpg" alt="logo tripboyflame" class="h-12 w-auto"/>
-
-    <a class="flex items-center gap-3 font-semibold bg-primary text-black rounded-full py-2 px-4" href="#">
-        <h1 class="sr-only">TripboyFlame</h1>
-        <span>TripboyFlame</span>
-    </a>
-    
-    <div>
-        <div class="flex items-center gap-6">
-            <nav class="hidden sm:block">
-                <ul class="flex items-center gap-6">
-                    {
-                        navItems.map(({ title, url }) => (
-                            <li>
-                                <a class="text-sm hover:text-gray-400" href={url}>
-                                    {title}
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </nav>
-        </div>
+<header class="max-w-[1440px] w-full mx-auto flex items-center justify-between p-4 bg-black text-white">
+    <div class = "flex items-center">
+        <img src="/tripbackground.webp" alt="logotripboyflame" class="h-16 w-auto rounded-xl  bg-black p-1"/>
+    </div>
+    <div class="text-primary font-semibold flex-grow text-center">
+        TRIP BOY FLAME
     </div>
 </header>
