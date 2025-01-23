@@ -1,0 +1,60 @@
+---
+import SocialMediaLink from "@components/SocialMediaLink.astro";
+import Icon from "@components/ui/Icon.astro";
+
+const hoverSocialNetworks = "md:transition-transform md:hover:scale-110";
+
+---
+
+
+<section class="flex flex-col items-center justify-between md:flex-row md:p-10">
+  <article
+    class="w-full flex items-center justify-center gap-2 py-4 flex-wrap md:justify-start"
+  >
+    <p class="text-xl tracking-[0.38px] leading-6 font-semibold">
+      Contáctame!
+    </p>
+
+    <span class="flex items-center gap-2 md:order-2 md:ml-auto">
+
+      <SocialMediaLink
+        href="https://www.instagram.com/trip_boyflame/"
+        class={hoverSocialNetworks}
+        socialPlatform="Visítanos en TikTok."
+      >
+        <Icon name="Instagram" />
+      </SocialMediaLink>
+      <SocialMediaLink
+        href="https://www.tiktok.com/@infojobs"
+        class={hoverSocialNetworks}
+        socialPlatform="Visítanos en TikTok."
+      >
+        <Icon name="Tiktok" />
+      </SocialMediaLink>
+
+      <SocialMediaLink
+        href="https://www.youtube.com/watch?v=5Aql62Q2q4Y"
+        class={hoverSocialNetworks}
+        socialPlatform="Visítanos en YouTube."
+      >
+        <Icon name="Youtube" />
+      </SocialMediaLink>
+
+      <SocialMediaLink
+        href="https://x.com/"
+        class={hoverSocialNetworks}
+        socialPlatform="Visítanos en X."
+      >
+        <Icon name="Twitter" />
+      </FollowUsLink>
+
+      <SocialMediaLink
+        href="https://www.facebook.com/ohtrapstarj"
+        class={hoverSocialNetworks}
+        socialPlatform="Visítanos en Facebook."
+      >
+        <Icon name="Facebook" />
+      </SocialMediaLink>
+    </span>
+  </article>
+</section>
