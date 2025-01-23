@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Astro Starter Kit: Basics
 
 ```sh
@@ -46,3 +47,7 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+=======
+# TripboyflameLanding
+Landing page con el portfolio de Tripboyflame un director y editor audiovisual de la ciudad de Medellin
+>>>>>>> 80f9eae74eac14c6fb058f67fb4109bf9e815ba0
