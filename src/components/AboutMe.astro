@@ -1,0 +1,67 @@
+---
+// AboutMe.astro
+---
+
+<section class="relative pt-6 pb-0">
+    <!-- Button to open modal -->
+    <button 
+      class="w-full px-6 py-2 border-gray-500  bg-black text-primary font-semibold hover:bg-blue-600 transition-all duration-300 transform hover:scale-105"
+      id="openModalButton"
+    >
+      About Me
+    </button>
+  
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50 hidden opacity-0 transition-opacity duration-500">
+      <div class="bg-white w-full sm:max-w-[425px] p-6 rounded-lg shadow-lg transform transition-all duration-500 opacity-0 scale-95">
+        <header>
+          <h2 class="text-xl font-bold">About Me</h2>
+          <p class="text-gray-600">I'm an audiovisual expert with over 10 years of experience in the industry.</p>
+        </header>
+        <div class="grid gap-4 py-4">
+          <p>
+            I specialize in creating high-quality video and audio content for various platforms. My expertise includes
+            photography, videography, audio recording, music production, video editing, and broadcasting.
+          </p>
+          <p>
+            With a keen eye for detail and a passion for storytelling, I strive to deliver exceptional results that
+            captivate audiences and convey powerful messages.
+          </p>
+        </div>
+        <!-- Close button -->
+        <button 
+          class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-400 transition-colors"
+          id="closeModalButton"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  
+    <!-- Modal Toggle Logic -->
+    <script>
+      const openModalButton = document.getElementById('openModalButton');
+      const closeModalButton = document.getElementById('closeModalButton');
+      const modal = document.getElementById('modal');
+      const modalContent = modal?.querySelector('div');
+  
+      // Verifying if modal is not null before adding event listeners
+      if (openModalButton && closeModalButton && modal && modalContent) {
+        openModalButton.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          modal.classList.add('opacity-100');
+          modalContent.classList.remove('opacity-0', 'scale-95');
+          modalContent.classList.add('opacity-100', 'scale-100');
+        });
+  
+        closeModalButton.addEventListener('click', () => {
+          modal.classList.add('opacity-0');
+          modalContent.classList.add('opacity-0', 'scale-95');
+          setTimeout(() => {
+            modal.classList.add('hidden');
+          }, 500); // Wait for the animation to finish
+        });
+      }
+    </script>
+  </section>
+  
