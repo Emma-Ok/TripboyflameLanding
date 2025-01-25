@@ -3,26 +3,18 @@ import SectionContainer from "@components/SectionContainer.astro";
 import Subtitle from "@components/Subtitle.astro";
 
 const ARTISTS = [
-  { name: "Taylor Swift", instagram: "https://www.instagram.com/taylorswift" },
-  { name: "Beyoncé", instagram: "https://www.instagram.com/beyonce" },
-  { name: "Ariana Grande", instagram: "https://www.instagram.com/arianagrande" },
-  { name: "Drake", instagram: "https://www.instagram.com/champagnepapi" },
-  { name: "The Weeknd", instagram: "https://www.instagram.com/theweeknd" },
-  { name: "Rihanna", instagram: "https://www.instagram.com/badgalriri" },
-  { name: "Ed Sheeran", instagram: "https://www.instagram.com/edsheeran" },
-  { name: "Billie Eilish", instagram: "https://www.instagram.com/billieeilish" },
-  { name: "Post Malone", instagram: "https://www.instagram.com/postmalone" },
-  { name: "Drake", instagram: "https://www.instagram.com/champagnepapi" },
-  { name: "Kanye West", instagram: "https://www.instagram.com/kanyewest" },
-  { name: "Shakira", instagram: "https://www.instagram.com/shakira" },
-  { name: "Coldplay", instagram: "https://www.instagram.com/coldplay" },
-  { name: "Lizzo", instagram: "https://www.instagram.com/lizzobeeating" },
-  { name: "Lil Nas X", instagram: "https://www.instagram.com/lilnasx" },
-  { name: "Sia", instagram: "https://www.instagram.com/siamusic" },
-  { name: "Camila Cabello", instagram: "https://www.instagram.com/camilacabello" },
-  { name: "Kendrick Lamar", instagram: "https://www.instagram.com/kendricklamar" },
-  { name: "Sam Smith", instagram: "https://www.instagram.com/samsmith" },
-  { name: "Halsey", instagram: "https://www.instagram.com/halsey" },
+  { name: "Tales2R", instagram: "https://www.instagram.com/tales2r" },
+  { name: "Baby Glissy", instagram: "https://www.instagram.com/babyglissy" },
+  { name: "Geezydee", instagram: "https://www.instagram.com/geezydee24k" },
+  { name: "Maxiisala", instagram: "https://www.instagram.com/maxiisala" },
+  { name: "Jamby_elfavo", instagram: "https://www.instagram.com/jamby_elfavo" },
+  { name: "Young fatty", instagram: "https://www.instagram.com/youngfattyyy" },
+  { name: "And3r.nw", instagram: "https://www.instagram.com/and3r.nw" },
+  { name: "Guxxisoho", instagram: "https://www.instagram.com/guxxisoho" },
+  { name: "Danny999", instagram: "https://www.instagram.com/danny999h" },
+  { name: "Kouji", instagram: "https://www.instagram.com/kouji_808" },
+  { name: "YXNG DIVI", instagram: "https://www.instagram.com/2.porciento" },
+  
 ];
 
 ---
@@ -33,14 +25,14 @@ const ARTISTS = [
   </Subtitle>
   
     <div class="w-full max-w-6xl space-y-4 px-6">
-      <ul class="flex flex-wrap justify-start gap-2">
+      <ul class="flex flex-wrap justify-center gap-2">
         {ARTISTS.map(({ name, instagram }) => (
           <li class="flex items-start gap-2">
             <a
               href={instagram}
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center gap-1 text-lg font-medium text-gray-800 hover:text-primary transition-colors duration-300 sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+              class="flex items-center gap-1 text-lg font-medium text-gray-800 hover:text-primary transition-colors duration-300 sm:text-base md:text-lg lg:text-xl xl:text-xl"
             >
               {name}
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="12" height="12" viewBox="0 0 48 48">
