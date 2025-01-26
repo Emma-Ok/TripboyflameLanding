@@ -8,14 +8,14 @@ const ARTICLES = [
         contentId: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
         class: "bg-gradient-to-r from-[#fef6db] to-[#fce197] text-ij-yellow md:aspect-[16/8] md:col-span-2 md:row-span-1 h-full",
         image:"/collage-info/and3rmodal.webp",
-        imageClass: "w-full h-full object-contain object-bottom md:h-auto md:w-auto md:object-right md:max-h-none",
+        imageClass: "w-full h-full object-cover object-bottom md:h-auto md:w-auto md:object-right md:max-h-none",
         action: "modal",
         track:"??",
         
     },
     {
         title: 'BABY GLI$$Y - MAJO NAVIDEÑO prod. monja',
-        contenttId: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat',
+        contentId: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat',
         class: "bg-gradient-to-r from-[#ffd2d2] to-[#f9b395] text-ij-red md:col-start-3 md:row-span-2 md:h-full",
         image:"/collage-info/majomodal.webp",
         imageClass: "w-full h-full object-cover object-[center_30%] md:object-center",
@@ -37,7 +37,7 @@ const ARTICLES = [
         contentId: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat',
         class: "bg-gradient-to-r from-[#e6f6ee] to-[#8bcfad] text-ij-green md:h-row-span-1 md:h-full",
         image:"/collage-info/pikachumodal.webp",
-        imageClass: "w-full h-full object-contain mb-4",
+        imageClass: "w-full h-full object-cover mb-4",
         action: "modal",
         track:"??",
     }
@@ -80,13 +80,13 @@ const ARTICLES = [
                     src={image}
                     alt=""
                     class:list={[
-                      "transition-transform duration-300 ease-in-out group-hover:scale-110",
+                      "transition-transform duration-300 ease-in-out group-hover:scale-120",
                       imageClass,
                     ]}
                   />
                 </div>
                 <div class="absolute inset-0 p-4 flex flex-col justify-start items-start z-10">
-                  <span class="font-medium text-3xl text-left text-pretty tracking-separated pr-3 md:max-w-64">
+                  <span class="font-medium text-3xl text-left text-pretty tracking-separated pr-2 md:max-w-64">
                     {title}
                   </span>
                 </div>
@@ -127,7 +127,7 @@ const ARTICLES = [
                   />
                 </div>
                 <div class="absolute inset-0 p-4 flex flex-col justify-start items-start z-10">
-                  <span class="font-medium text-3xl text-left text-pretty tracking-separated pr-3 md:max-w-64">
+                  <span class="font-medium text-lg text-left text-pretty tracking-separated pr-3 md:max-w-64">
                     {title}
                   </span>
                 </div>
@@ -138,59 +138,4 @@ const ARTICLES = [
     </div>
   </SectionContainer>
   
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // modal
-      const $modal = document.getElementById("infographic-modal")
-      const $modalBody = document.getElementById("infographic-modal-body")
-      const $btnModal = document.getElementById("btn-modal")
-      const $body = document.body
   
-      // buttons bento
-      const $buttons = document.querySelectorAll("button[data-content-id]")
-  
-      const openModal = (id: string) => {
-        const contentId = `infographic-${id}`
-        const content = document.getElementById(contentId)
-  
-        if (content && $modalBody) {
-          $modal?.classList.add("modal-active")
-          $modalBody.replaceChildren(content.cloneNode(true))
-  
-          $modalBody.firstElementChild?.classList.replace("hidden", "flex")
-  
-          $body.style.overflow = "hidden"
-        }
-      }
-  
-      const closeModal = () => {
-        if ($modal?.classList.contains("modal-active")) {
-          $modal?.classList.remove("modal-active")
-        }
-  
-        const currentContent = $modalBody?.firstChild
-  
-        if (currentContent) {
-          $modalBody?.removeChild(currentContent)
-        }
-  
-        $body.style.overflow = ""
-      }
-  
-      const handleKeyDown = (event: KeyboardEvent) => {
-        if (event.key === "Escape") {
-          closeModal()
-        }
-      }
-  
-      $buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const id = button.getAttribute("data-content-id")
-          if (id) openModal(id)
-        })
-      })
-  
-      $btnModal?.addEventListener("click", () => closeModal())
-      document.addEventListener("keydown", handleKeyDown)
-    })
-  </script>
