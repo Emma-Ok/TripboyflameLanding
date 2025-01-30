@@ -3,10 +3,14 @@
 import Layout from "@layouts/Layout.astro";
 import CollageInfo from '@components/CollageInfo.astro';
 import JobsCollage from '@components/JobsCollage.astro';
-import ToolsCollage from '@components/ToolsCollage.astro';
 
 import ArtistsCollage from "@components/ArtistsCollage.astro";
 import AboutMe from "@components/AboutMe.astro";
+import InfographicModal from "@components/InfographicModal.astro";
+
+import FirstModal from "@components/FirstModal.astro";
+import SecondModal from "@components/SecondModal.astro";
+import ThirdModal from "@components/ThirdModal.astro";
 ---
 
 <Layout title="Tripboyflame - Personal website">
@@ -15,4 +19,12 @@ import AboutMe from "@components/AboutMe.astro";
     <ArtistsCollage />
     <JobsCollage />
     <AboutMe />
+    <InfographicModal />
+
+    <!-- Infografías -->
+    <FirstModal infographicId="first-modal" />
+  
+    <SecondModal infographicId="second-modal" />
+  
+    <ThirdModal infographicId="third-modal" />s
 </Layout>

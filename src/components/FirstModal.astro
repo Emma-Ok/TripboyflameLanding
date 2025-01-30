@@ -1,0 +1,32 @@
+---
+import InfographicBody from "./InfographicBody.astro"
+import InfographicHeader from "./InfographicHeader.astro"
+
+
+const { infographicId } = Astro.props
+---
+
+<section
+  id={`infographic-${infographicId}`}
+  class="mx-auto px-4 max-w-7xl w-full flex-col md:gap-[50px] py-[72px] hidden"
+>
+  <InfographicHeader
+    badgeText="ESCUCHALO AHORA MISMO EN TODAS LAS PLATAFORMAS."
+    title="AND3Rnw - BERETTA (Official Video) Prod. Flame & Svnti"
+    subtitle={[
+      "FILM BY: ITSLILJAY.RAW",
+      "ARTE: DAOC",
+      "EDIT: LUY TRIPBOYFLAME",
+      "VFX: ITSLILJAY.RAW",
+      "LOS VAMPIROS🩸",
+      "NEW WAVE 🌊"]}
+  />
+
+  <InfographicBody images ={
+    [
+      "/collage-info/beretta.webp",
+      "/collage-info/and3rmodal.webp",
+      "/collage-info/berettamodal.webp",
+    ]
+  } />
+</section>

@@ -5,41 +5,41 @@ import Subtitle from "@components/Subtitle.astro"
 const ARTICLES = [
     {
         title: 'AND3R.NW - BERETTA prod.globolife',
-        contentId: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+        contentId: 'first-modal',
         class: "bg-gradient-to-r from-[#fef6db] to-[#fce197] text-ij-yellow md:aspect-[16/8] md:col-span-2 md:row-span-1 h-full",
         image:"/collage-info/and3rmodal.webp",
         imageClass: "w-full h-full object-cover object-bottom md:h-auto md:w-auto md:object-right md:max-h-none",
         action: "modal",
-        track:"??",
+        track:"blog_selection_process",
         
     },
     {
         title: 'BABY GLI$$Y - MAJO NAVIDEÑO prod. monja',
-        contentId: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat',
+        contentId: 'second-modal',
         class: "bg-gradient-to-r from-[#ffd2d2] to-[#f9b395] text-ij-red md:col-start-3 md:row-span-2 md:h-full",
         image:"/collage-info/majomodal.webp",
         imageClass: "w-full h-full object-cover object-[center_30%] md:object-center",
         action: "modal",
-        track:"??",
+        track:"blog_emerging_jobs",
     },
     {
         title: 'BABY GLI$$Y - MAJO NAVIDEÑO prod. monja',
-        contentId: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat',
+        contentId: 'company-opinion',
         class: "bg-sky-800 text-ij-blue md:h-row-span-1",
         image:"/collage-info/majonavideño.webp",
         imageClass: "w-full h-full object-cover",
         action: "link",
         link: "https://www.youtube.com/watch?v=5Aql62Q2q4Y",
-        track: "??",
+        track: "blog_companies_opinions",
     },
     {
         title: 'PIKACHU - GEEZEDEE & YOUNG FATTY PROD MONJA',
-        contentId: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat',
+        contentId: 'third-modal',
         class: "bg-gradient-to-r from-[#e6f6ee] to-[#8bcfad] text-ij-green md:h-row-span-1 md:h-full",
         image:"/collage-info/pikachumodal.webp",
         imageClass: "w-full h-full object-cover mb-4",
         action: "modal",
-        track:"??",
+        track:"blog_interview_tips",
     }
 ]
 ---
@@ -103,13 +103,13 @@ const ARTICLES = [
                 <div
                   class:list={[
                     "absolute inset-0 flex overflow-hidden p-0",
-                    contentId === "selection-process"
+                    contentId === "first-modal"
                       ? "items-end justify-center md:items-stretch md:justify-end"
                       : "",
-                    contentId === "emergent-positions"
+                    contentId === "second-modal"
                       ? "items-start md:items-center"
                       : "",
-                    contentId === "no-experience"
+                    contentId === "third-modal"
                       ? "items-end justify-center"
                       : "items-end justify-end",
                   ]}
@@ -120,7 +120,7 @@ const ARTICLES = [
                     class:list={[
                       "transition-transform duration-300 ease-in-out group-hover:scale-110",
                       imageClass,
-                      contentId === "selection-process"
+                      contentId === "first-modal"
                         ? "max-h-[70%] md:max-h-none md:h-full md:w-auto md:pr-0"
                         : "",
                     ]}
@@ -138,4 +138,59 @@ const ARTICLES = [
     </div>
   </SectionContainer>
   
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // modal
+      const $modal = document.getElementById("infographic-modal")
+      const $modalBody = document.getElementById("infographic-modal-body")
+      const $btnModal = document.getElementById("btn-modal")
+      const $body = document.body
   
+      // buttons bento
+      const $buttons = document.querySelectorAll("button[data-content-id]")
+  
+      const openModal = (id: string) => {
+        const contentId = `infographic-${id}`
+        const content = document.getElementById(contentId)
+  
+        if (content && $modalBody) {
+          $modal?.classList.add("modal-active")
+          $modalBody.replaceChildren(content.cloneNode(true))
+  
+          $modalBody.firstElementChild?.classList.replace("hidden", "flex")
+  
+          $body.style.overflow = "hidden"
+        }
+      }
+  
+      const closeModal = () => {
+        if ($modal?.classList.contains("modal-active")) {
+          $modal?.classList.remove("modal-active")
+        }
+  
+        const currentContent = $modalBody?.firstChild
+  
+        if (currentContent) {
+          $modalBody?.removeChild(currentContent)
+        }
+  
+        $body.style.overflow = ""
+      }
+  
+      const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === "Escape") {
+          closeModal()
+        }
+      }
+  
+      $buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const id = button.getAttribute("data-content-id")
+          if (id) openModal(id)
+        })
+      })
+  
+      $btnModal?.addEventListener("click", () => closeModal())
+      document.addEventListener("keydown", handleKeyDown)
+    })
+  </script>

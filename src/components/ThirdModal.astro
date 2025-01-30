@@ -1,0 +1,43 @@
+---
+import InfographicBody from "./InfographicBody.astro"
+import InfographicHeader from "./InfographicHeader.astro"
+
+const standsInterviews = [
+  {
+    image: "/thumbnails/pikachuimg.webp",
+    title: "Sinceridad y confianza",
+    description:
+      "¡Si te han llamado será por algo! Demuestra que lo que te falta de experiencia, te sobra de aptitud.",
+    firstBgColor: "#B4E5CD",
+    secondBgColor: "#E1F4EB",
+    textColor: "#008949",
+  },
+ 
+] as const
+
+const { infographicId } = Astro.props
+---
+
+<section
+  id={`infographic-${infographicId}`}
+  class="mx-auto px-4 max-w-7xl w-full flex-col md:gap-[50px] py-[72px] hidden"
+>
+  <InfographicHeader
+    badgeText="ESCUCHALO AHORA MISMO EN TODAS LAS PLATAFORMAS."
+    title="GEEZYDEE X YOUNGFATTY - PIKACHU Prod. MONJA💉"
+    subtitle={[
+      "FILM BY: 2 PORCIENTO",
+      "ARTE: TREPO",
+      "EDIT: LUY TRIPBOYFLAME",
+      "VFX: ITSLILJAY.RAW",
+      "LOS XTRADITABLEZ🩸",
+      "24K💊",
+    ]}
+  />
+
+  <InfographicBody images={[
+    "/collage-info/pikachu.webp",
+    "/collage-info/pikachumodal.webp",
+    "/collage-info/beretta.webp",
+  ]} />
+</section>
