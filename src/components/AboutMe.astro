@@ -1,39 +1,36 @@
----
-// AboutMe.astro
----
 
 <section class="relative pt-6 pb-0">
     <!-- Button to open modal -->
     <button 
-      class="w-full px-6 py-2 border-gray-500  bg-black text-primary font-semibold hover:bg-gray-400 transition-all duration-300 transform hover:scale-105"
+      class="w-full px-6 py-2 border-gray-500  bg-black text-primary font-semibold hover:bg-orange-200 transition-all duration-300 transform hover:scale-105"
       id="openModalButton"
     >
       About Me
     </button>
   
     <!-- Modal -->
-    <div id="modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50 hidden opacity-0 transition-opacity duration-500">
+    <div id="modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50 hidden opacity-0 transition-opacity duration-300">
       <div
   class="bg-tripbackground bg-cover bg-center w-full sm:max-w-[425px] p-6 rounded-lg shadow-lg transform transition-all duration-500 opacity-0 scale-95">
 
 
         <header>
-          <h2 class="text-xl font-bold">About Me</h2>
+          <h2 class="text-xl font-bold text-primary">About Me</h2>
           <p class="text-gray-600">I'm an audiovisual expert with over 10 years of experience in the industry.</p>
         </header>
         <div class="grid gap-4 py-4">
-          <p>
+          <p class="text-white">
             I specialize in creating high-quality video and audio content for various platforms. My expertise includes
             photography, videography, audio recording, music production, video editing, and broadcasting.
           </p>
-          <p>
+          <p class="text-white">
             With a keen eye for detail and a passion for storytelling, I strive to deliver exceptional results that
             captivate audiences and convey powerful messages.
           </p>
         </div>
         <!-- Close button -->
         <button 
-          class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-400 transition-colors"
+          class="mt-4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-orange-200 transition-colors"
           id="closeModalButton"
         >
           Close
@@ -41,7 +38,7 @@
       </div>
     </div>
   
-    <!-- Modal Toggle Logic -->
+    <!-- Modal Logic -->
     <script>
       const openModalButton = document.getElementById('openModalButton');
       const closeModalButton = document.getElementById('closeModalButton');
@@ -62,7 +59,7 @@
           modalContent.classList.add('opacity-0', 'scale-95');
           setTimeout(() => {
             modal.classList.add('hidden');
-          }, 500); // Wait for the animation to finish
+          }, 300); // Wait for the animation to finish
         });
       }
     </script>

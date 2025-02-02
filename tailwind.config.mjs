@@ -14,7 +14,7 @@ export default {
 		  "ij-yellow": "#EFA500",
 		},
 		backgroundImage: {
-		  "tripbackground": "url(/tripbackground.webp)",
+		  "tripbackground": "url(/logotrip.webp)",
 		},
 		borderRadius: {
 		  "4xl": "3rem",
