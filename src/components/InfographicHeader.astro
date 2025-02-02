@@ -23,15 +23,15 @@ const subtitleArray = typeof subtitle === 'string' ? [subtitle] : subtitle;
   <div class="py-2 flex flex-col gap-6">
     <!-- Responsive Title -->
     <h2
-      class="text-[32px] leading-[35.2px] md:text-[64px] md:leading-[70px] text-black max-w-5xl"
+      class="text-[32px] font-bold leading-[35.2px] md:text-[60px] md:leading-[70px] text-black max-w-4xl"
     >
       {title}
     </h2>
 
     <!-- Subtitle as Column -->
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col font-semibold gap-2">
       {subtitleArray.map((line) => (
-        <h4 class="text-2xl leading-[30px] text-black">
+        <h4 class="text-xl  leading-[30px] text-black">
           {line}
         </h4>
       ))}
