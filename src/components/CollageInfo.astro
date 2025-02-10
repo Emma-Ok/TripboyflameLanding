@@ -4,7 +4,7 @@ import Subtitle from "@components/Subtitle.astro"
 
 const ARTICLES = [
     {
-        title: 'AND3R.NW - BERETTA prod.globolife',
+        title: 'AND3R.NW - BERETTA.',
         contentId: 'first-modal',
         class: "bg-gradient-to-r from-[#fef6db] to-[#fce197] text-ij-red md:aspect-[16/8] md:col-span-2 md:row-span-1 h-full",
         image:"/collage-info/and3rmodal.webp",
@@ -14,7 +14,7 @@ const ARTICLES = [
         
     },
     {
-        title: 'BABY GLI$$Y - MAJO NAVIDEÑO prod. monja',
+        title: 'BABY GLI$$Y - MAJO NAVIDEÑO.',
         contentId: 'second-modal',
         class: "bg-gradient-to-r from-[#ffd2d2] to-[#f9b395] text-ij-red md:col-start-3 md:row-span-2 md:h-full",
         image:"/collage-info/majomodal.webp",
@@ -23,7 +23,7 @@ const ARTICLES = [
         track:"blog_emerging_jobs",
     },
     {
-        title: 'KOUJI - LA H SESSION #1 X DANNY999',
+        title: 'LA H SESSION #1 X DANNY999',
         contentId: 'fourth-modal',
         class: "bg-sky-800 text-ij-blue md:h-row-span-1",
         image:"/collage-info/danny999.webp",
@@ -32,7 +32,7 @@ const ARTICLES = [
         track: "blog_companies_opinions",
     },
     {
-        title: 'PIKACHU - GEEZEDEE & YOUNG FATTY PROD MONJA',
+        title: 'PIKACHU - GEEZEDEE & YOUNG FATTY',
         contentId: 'third-modal',
         class: "bg-gradient-to-r from-[#e6f6ee] to-[#8bcfad] text-ij-green md:h-row-span-1 md:h-full",
         image:"/collage-info/pikachumodal.webp",
@@ -45,7 +45,7 @@ const ARTICLES = [
 
 
 <SectionContainer>
-    <Subtitle>Lo último de luy</Subtitle>
+    <Subtitle>Lo último de <span class="text-primary">LUY</span></Subtitle>
     <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 md:p-0">
       {
         ARTICLES.map(
@@ -127,7 +127,7 @@ const ARTICLES = [
                   />
                 </div>
                 <div class="absolute inset-0 p-4 flex flex-col justify-start items-start z-10">
-                  <span class="font-medium text-lg text-left text-pretty tracking-separated pr-3 md:max-w-64">
+                  <span class="font-sans text-lg text-left text-pretty tracking-separated pr-3 md:max-w-64">
                     {title}
                   </span>
                 </div>
