@@ -1,26 +1,14 @@
 ---
+import SectionContainer from "./SectionContainer.astro";
+
 const email = "luy@tripboyflame.com";
-const instagramUrl = "https://www.instagram.com/emmanuel._.ok/";
 ---
 
-<footer class="w-full flex flex-col md:flex-row items-center justify-between px-6 py-2 bg-black text-center md:text-left space-y-4 md:space-y-0 md:space-x-16 text-sm md:text-base">
-  <div>
-    <p class="text-xs text-white">{email}</p>
+<SectionContainer class="w-full flex flex-col md:flex-row items-center justify-between p-4 bg-black text-center md:text-left space-y-4 md:space-y-0 md:space-x-16 text-sm md:text-base">
+  <div >
+    <p class="text-lg text-white tracking-separated leading-6 font-semibold">{email}</p>
   </div>
   <div>
-    <p class="text-primary font-semibold text-center flex-grow text-sm sm:text-lg md:text-xl">tripboyflame®</p>
+    <p class="text-xl text-primary tracking-[0.38px] leading-6 font-semibold">tripboyflame®</p>
   </div>
-  <div>
-    <p class="text-xs text-white">
-      Página diseñada y creada por: 
-      <a 
-        href={instagramUrl} 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="text-primary hover:opacity-80 transition-opacity"
-      >
-        Emmanuel._.ok
-      </a>
-    </p>
-  </div>
-</footer>
+</SectionContainer>
