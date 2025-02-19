@@ -7,6 +7,7 @@ export default {
 		colors: {
 		  primary: "#f05006",
 		  accent: "#FE5230",
+		  "ij-orange": "#ffd5a8",
 		  "ij-black": "#212121",
 		  "ij-red": "#FF421C",
 		  "ij-green": "#00A550",
