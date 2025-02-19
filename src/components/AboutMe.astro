@@ -1,70 +1,79 @@
+<section class="relative pt-4 pb-0">
+  <!-- Botón para abrir el modal -->
+  <button
+    class="w-full px-6 py-2 border-gray-500 bg-black text-primary font-bold hover:bg-orange-200 transition-all duration-300 transform hover:scale-100"
+    id="openModalButton"
+  >
+    Más sobre mí.
+  </button>
 
-<section class="relative pt-6 pb-0">
-    <!-- Button to open modal -->
-    <button 
-      class="w-full px-6 py-2 border-gray-500  bg-black text-primary font-semibold hover:bg-orange-200 transition-all duration-300 transform hover:scale-100"
-      id="openModalButton"
+  <!-- Modal -->
+  <div
+    id="modal"
+    class="fixed inset-0 bg-neutral-900 bg-opacity-90 flex justify-center items-center z-50 opacity-0 pointer-events-none transition-opacity duration-300"
+    aria-hidden="true"
+    role="dialog"
+  >
+    <div
+      id="modalContent"
+      class="relative bg-tripbackground bg-cover bg-center
+         w-11/12 sm:w-3/4 md:w-5/12 lg:w-1/3 xl:w-5/12
+             min-h-[40vh] max-h-[60vh]
+             overflow-y-auto p-6 rounded-lg shadow-lg transform transition-all duration-300 scale-95 opacity-0"
     >
-      Más sobre mí.
-    </button>
-  
-    <!-- Modal -->
-    <div id="modal" class="fixed inset-1 bg-neutral-900 bg-opacity-90 flex justify-center items-center z-50 hidden transition-opacity duration-300">
-      <div class="relative bg-tripbackground bg-cover bg-center 
-      w-[90vw] sm:max-w-[70vw] md:max-w-[60vw] lg:max-w-[50vw] xl:max-w-[40vw] 
-      min-h-[40vh] max-h-[80vh] 
-      overflow-y-auto p-6 rounded-lg shadow-lg transform transition-all duration-300 opacity-0 scale-95">        <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
-        <div class="relative z-10">
-
+      <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+      <div class="relative z-10">
         <header>
-          <h2 class="text-xl font-bold text-primary">Sobre mí</h2>
-          <p class="text-gray-500 font-semibold">Un saludo, soy Luy un director y productor audivisual nacido en la ciudad de Medellín con +4 años de experiencia en la industria audiovisual .</p>
+          <h1 class="text-xl font-sans font-bold text-primary">Sobre mí</h1>
+          <p class="text-gray-500 font-sans font-bold">
+            Un saludo, soy Luy, director y productor audiovisual nacido en Medellín, con +4 años de experiencia.
+          </p>
         </header>
         <div class="grid gap-4 py-4">
-          <p class="text-white">
-            Me especializo en crear contenido de video y audio de alta calidad para diversas plataformas. Mis habilidades y trabajos incluyen.
-            Fotografía, dirección de videos, montaje y edición de videos para la industria musical TRAP.
+          <p class="text-white font-sans font-medium">
+            Me especializo en crear contenido de video y audio de alta calidad para diversas plataformas. Mis habilidades incluyen fotografía, dirección de videos, montaje y edición para la industria musical TRAP.
           </p>
-          <p class="text-white">
-            Con un ojo agudo para todos los detalles y una pasión por contar historias,
-            me esfuerzo por ofrecer resultados excepcionales que cautiven a todo tipo de audiencias. Estoy en constante aprendizaje y crecimiento para mejorar mis habilidades y para constantemente subir la calidad de mis obras. 
-            Gracias por tomarte el tiempo de conocerme. No dudes en contactarme y que tu proximo proyecto audivisual sea una obra de arte.
+          <p class="text-white font-sans font-medium">
+            Con un ojo agudo para los detalles y una pasión por contar historias, me esfuerzo por ofrecer resultados excepcionales que cautiven a la audiencia. Gracias por conocerme.
           </p>
         </div>
-        <!-- Close button -->
-        <button 
-          class="mt-4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-orange-200 transition-colors"
+        <!-- Botón de cerrar -->
+        <button
+          class="mt-2 px-4 py-2 font-sans bg-primary text-white rounded-lg hover:bg-red-300 transition-colors"
           id="closeModalButton"
         >
           Cerrar
         </button>
       </div>
     </div>
-  
-    <!-- Modal Logic -->
-    <script>
-      const openModalButton = document.getElementById('openModalButton');
-      const closeModalButton = document.getElementById('closeModalButton');
-      const modal = document.getElementById('modal');
-      const modalContent = modal?.querySelector('div');
-  
-      // Verifying if modal is not null before adding event listeners
-      if (openModalButton && closeModalButton && modal && modalContent) {
-        openModalButton.addEventListener('click', () => {
-          modal.classList.remove('hidden');
-          modal.classList.add('opacity-100');
-          modalContent.classList.remove('opacity-0', 'scale-95');
-          modalContent.classList.add('opacity-100', 'scale-100');
-        });
-  
-        closeModalButton.addEventListener('click', () => {
-          modal.classList.add('opacity-0');
-          modalContent.classList.add('opacity-0', 'scale-95');
-          setTimeout(() => {
-            modal.classList.add('hidden');
-          }, 300); // Wait for the animation to finish
-        });
-      }
-    </script>
-  </section>
-  
+  </div>
+
+  <!-- Lógica del modal -->
+  <script>
+    const openModalButton = document.getElementById("openModalButton");
+    const closeModalButton = document.getElementById("closeModalButton");
+    const modal = document.getElementById("modal");
+    const modalContent = document.getElementById("modalContent");
+
+    if (openModalButton && closeModalButton && modal && modalContent) {
+      openModalButton.addEventListener("click", () => {
+        // Abre el modal: quitar clases que ocultan y agregar las que muestran
+        modal.classList.remove("pointer-events-none", "opacity-0", "opacity-100");
+        modal.classList.add("opacity-100");
+        modalContent.classList.remove("scale-95", "opacity-0");
+        modalContent.classList.add("scale-100", "opacity-100");
+      });
+
+      closeModalButton.addEventListener("click", () => {
+        // Inicia la animación de cierre en el contenido
+        modalContent.classList.replace("scale-100", "scale-95");
+        modalContent.classList.replace("opacity-100", "opacity-0");
+        // Después de la duración de la transición, remueve la clase que lo muestra en el contenedor
+        setTimeout(() => {
+          modal.classList.remove("opacity-100");
+          modal.classList.add("opacity-0", "pointer-events-none");
+        }, 300);
+      });
+    }
+  </script>
+</section>

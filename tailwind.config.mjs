@@ -17,6 +17,9 @@ export default {
 		backgroundImage: {
 		  "tripbackground": "url(/logotrip.webp)",
 		},
+		fontFamily: {
+			sans: ['Lato', 'sans-serif'],
+		  },
 		borderRadius: {
 		  "4xl": "3rem",
 		},
