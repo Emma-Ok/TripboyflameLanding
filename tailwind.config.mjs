@@ -5,7 +5,7 @@ export default {
 	theme: {
 	  extend: {
 		colors: {
-		  primary: "#fb5607",
+		  primary: "#f05006",
 		  accent: "#FE5230",
 		  "ij-black": "#212121",
 		  "ij-red": "#FF421C",
@@ -30,9 +30,6 @@ export default {
 		},
 		transitionDuration: {
 		  DEFAULT: "500ms",
-		},
-		screens: {
-		  xs: "480px",
 		},
 	  },
 	},
