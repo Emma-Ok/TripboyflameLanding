@@ -3,24 +3,25 @@
   class="w-full h-20 flex justify-center items-center sticky top-0 bg-black z-50 backdrop-blur-xl shadow-md transition-all duration-300"
 >
   <img    
+    id="header-img"
     src="/Tripboyflametest.webp"
     alt="logotripboyflame"
-    class="h-full w-auto object-contain transition-all duration-300"
+    class="h-full w-auto object-contain transition-transform duration-300"
   />
 </header>
 
 <script>
-  const header = document.getElementById("header");
+  document.addEventListener("DOMContentLoaded", () => {
+    const img = document.getElementById("header-img");
 
-  if (header) {
+    if (!img) return; // Verifica si la imagen existe antes de continuar
+
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
-        header.classList.add("bg-black/90", "shadow-lg");
-        header.style.height = "5rem"; // Aumenta la altura del header (ajustar según necesidad)
+        img.style.transform = "scale(1.2)";
       } else {
-        header.classList.remove("bg-black/90", "shadow-lg");
-        header.style.height = "4rem"; // Vuelve a la altura original
+        img.style.transform = "scale(1)";
       }
     });
-  }
+  });
 </script>
