@@ -1,46 +1,25 @@
 <header
   id="header"
-  class="w-full h-20 flex justify-center items-center sticky top-0  bg-black z-50 backdrop-blur-xl shadow-md transition-all duration-300"
+  class="w-full h-20 flex justify-center items-center sticky top-0 bg-black z-50 backdrop-blur-xl shadow-md transition-all duration-300"
 >
-
-    <img    
-      src="/Tripboyflametest.webp"
-      alt="logotripboyflame"
-      class="h-full w-auto object-contain transition-transform duration-300 "
-    />
-
-  <!-- <div
-    class="text-primary font-semibold text-center flex-grow text-sm sm:text-lg md:text-xl"
-  >
-    TRIP BOY FLAME
-  </div> -->
+  <img    
+    src="/Tripboyflametest.webp"
+    alt="logotripboyflame"
+    class="h-full w-auto object-contain transition-all duration-300"
+  />
 </header>
 
 <script>
   const header = document.getElementById("header");
+
   if (header) {
-    const headerImg = header.querySelector("img");
     window.addEventListener("scroll", () => {
-      if (headerImg) {
-        if (window.scrollY > 20) {
-          headerImg.classList.add("scale-110");
-        } else {
-          headerImg.classList.remove("scale-110");
-        }
-      }
-    });
-  }
-</script><script>
-  const header = document.getElementById("header");
-  if (header) {
-    const headerImg = header.querySelector("img");
-    window.addEventListener("scroll", () => {
-      if (headerImg) {
-        if (window.scrollY > 20) {
-          headerImg.classList.add("scale-110");
-        } else {
-          headerImg.classList.remove("scale-110");
-        }
+      if (window.scrollY > 50) {
+        header.classList.add("bg-black/90", "shadow-lg");
+        header.style.height = "5rem"; // Aumenta la altura del header (ajustar según necesidad)
+      } else {
+        header.classList.remove("bg-black/90", "shadow-lg");
+        header.style.height = "4rem"; // Vuelve a la altura original
       }
     });
   }
