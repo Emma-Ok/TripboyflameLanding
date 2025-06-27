@@ -13,6 +13,7 @@ export default {
 		  "ij-green": "#00A550",
 		  "ij-blue": "#E8F2F8",
 		  "ij-yellow": "#EFA500",
+		  'ij-depthblue': "#0000CD",
 		},
 		backgroundImage: {
 		  "tripbackground": "url(/logotrip.webp)",

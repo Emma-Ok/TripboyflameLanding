@@ -1,35 +1,32 @@
 ---
-import InfographicBody from "./InfographicBody.astro"
-import InfographicHeader from "./InfographicHeader.astro"
+import InfographicBody from "./InfographicBody.astro";
+import InfographicHeader from "./InfographicHeader.astro";
 
 
-const { infographicId } = Astro.props
+const { infographicId } = Astro.props;
 ---
 
 <section
   id={`infographic-${infographicId}`}
-  class="mx-auto px-2 max-w-7xl w-full flex-col gap-10 py-2 hidden bg-black rounded-lg"
+  class="mx-auto px-4 max-w-7xl w-full flex-col md:gap-[50px] py-4 hidden"
 >
   <InfographicHeader
     badgeText="ESCUCHALO AHORA MISMO EN TODAS LAS PLATAFORMAS."
-    title="AND3Rnw - BERETTA (Official Video) Prod. Flame & Svnti"
-    subtitle={[
-      "FILM BY: ITSLILJAY.RAW",
-      "ARTE: DAOC",
+    title="GORILA BLUE | PRENDELO HAINY ❌ TOTI MD ❌ GUTY ❌ BOTY ❌ YEI B ❌ LADIEL"
+    subtitle={["FILM BY: LUY TRIPBOYFLAME",
+      "ARTE: TOM_ARTZ",
       "EDIT: LUY TRIPBOYFLAME",
-      "VFX: ITSLILJAY.RAW",
-      "LOS VAMPIROS🩸",
-      "NEW WAVE 🌊"]}
+      "VFX: VAIRROW",
+      "PRENDELO HAINY 🗣️",
+      ""]}
   />
 
-  <InfographicBody images ={
-    [
-      "/modals/modal-1/And3r8.webp",
-      "/collage-info/and3rmodal.webp",
-      "/modals/modal-1/And3r2.webp",
-      "/modals/modal-1/And3r3.webp",
-      "/modals/modal-1/And3r4.webp",
-      "/modals/modal-1/And3r5.webp",
-  ]
-  } />
+  <InfographicBody images={[
+    "/modals/modal-1/gorillablue1.webp",
+    "/modals/modal-1/gorillablue7.webp",
+    "/modals/modal-1/gorillablue3.webp",
+    "/modals/modal-1/gorillablue4.webp",
+    "/modals/modal-1/gorillablue5.webp",
+    "/modals/modal-1/gorillablue2.webp",
+  ]}  />
 </section>

@@ -1,29 +1,35 @@
 ---
-import InfographicBody from "./InfographicBody.astro";
-import InfographicHeader from "./InfographicHeader.astro";
+import InfographicBody from "./InfographicBody.astro"
+import InfographicHeader from "./InfographicHeader.astro"
 
 
-const { infographicId } = Astro.props;
+const { infographicId } = Astro.props
 ---
 
 <section
   id={`infographic-${infographicId}`}
-  class="mx-auto px-4 max-w-7xl w-full flex-col md:gap-[50px] py-4 hidden"
+  class="mx-auto px-2 max-w-7xl w-full flex-col gap-10 py-2 hidden bg-black rounded-lg"
 >
   <InfographicHeader
     badgeText="ESCUCHALO AHORA MISMO EN TODAS LAS PLATAFORMAS."
-    title="Baby Glissy - Majo Navideño ( Video Oficial ) prod. Yxng divi"
-    subtitle={["FILM BY: 2 PORCIENTO",
-      "ARTE: DAO",
+    title="AND3Rnw - BERETTA (Official Video) Prod. Flame & Svnti"
+    subtitle={[
+      "FILM BY: ITSLILJAY.RAW",
+      "ARTE: DAOC",
       "EDIT: LUY TRIPBOYFLAME",
       "VFX: ITSLILJAY.RAW",
-      "WAP❄️H",
-      "__LAS TORRES__"]}
+      "LOS VAMPIROS🩸",
+      "NEW WAVE 🌊"]}
   />
 
-  <InfographicBody images={[
-    "/collage-info/pikachu.webp",
-    "/collage-info/pikachumodal.webp",
-    "/collage-info/beretta.webp",
-  ]}  />
+  <InfographicBody images ={
+    [
+      "/modals/modal-2/And3r8.webp",
+      "/collage-info/and3rmodal.webp",
+      "/modals/modal-2/And3r2.webp",
+      "/modals/modal-2/And3r3.webp",
+      "/modals/modal-2/And3r4.webp",
+      "/modals/modal-2/And3r5.webp",
+  ]
+  } />
 </section>
