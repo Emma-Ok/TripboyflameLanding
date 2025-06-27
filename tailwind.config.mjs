@@ -10,6 +10,7 @@ export default {
 		  "ij-orange": "#ffd5a8",
 		  "ij-black": "#212121",
 		  "ij-red": "#FF4C00",
+		  "ij-red-depth": "#fe2222",
 		  "ij-sand": "#70662e",
 		  "ij-green": "#00A550",
 		  "ij-blue": "#E8F2F8",
