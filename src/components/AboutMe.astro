@@ -1,88 +1,84 @@
-<section class="relative pt-6 pb-0">
-  <!-- Botón para abrir el modal -->
-  <button
-    class="w-full px-6 py-2 border-gray-500 bg-black text-primary font-bold hover:bg-orange-200 transition-all duration-300 transform hover:scale-100"
-    id="openModalButton"
-  >
-    Más sobre mí.
-  </button>
-
-  <!-- Modal -->
-  <div
-    id="modal"
-    class="fixed inset-0 bg-neutral-900 bg-opacity-95 flex justify-center items-center z-50 opacity-0 pointer-events-none transition-opacity duration-300"
-    aria-hidden="true"
-    inert
-    role="dialog"
-  >
-    <div
-      id="modalContent"
-      class="bg-tripbackground bg-cover bg-center
-         w-11/12 sm:w-3/4 md:w-5/12 lg:w-2/5 xl:w-1/3 2xl:w-1/4 max-w-3xl
-             overflow-y-auto p-10 rounded-lg shadow-lg transform transition-all duration-300 scale-95 opacity-0"
-    >
-      <div class="absolute inset-0 bg-ij-black opacity-65 rounded-lg"></div>
-      <div class="relative z-10">
+<!-- About Me Section -->
+<section class="relative pt-2 pb-4 px-4 sm:px-6 lg:px-8 lg:pt-2 lg:pb-4 min-h-[70vh] flex items-center">
+  <div class="max-w-7xl mx-auto w-full">
+    <!-- Desktop Layout: Texto a la izquierda, imagen a la derecha -->
+    <div class="hidden lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center h-full">
+      <!-- Contenido de texto -->
+      <div class="space-y-6">
         <header>
-          <h1 class="text-2xl font-sans font-bold text-primary">Sobre mí</h1>
-          <p class="text-gray-400 font-sans font-bold py-1">
+          <h1 class="text-4xl xl:text-5xl font-sans font-bold text-primary mb-4">
+            Sobre mí
+          </h1>
+          <p class="text-xl text-gray-400 font-sans font-bold leading-relaxed">
             Un saludo, soy Luy, director y productor audiovisual nacido en Medellín, con +4 años de experiencia.
           </p>
         </header>
-        <div class="grid gap-4 py-2">
-          <p class="text-white font-sans font-bold">
+        
+        <div class="space-y-4">
+          <p class="text-lg text-white font-sans font-bold leading-relaxed">
             Me especializo en crear contenido de video y audio de alta calidad para diversas plataformas. Mis habilidades incluyen fotografía, dirección de videos, montaje y edición para la industria musical TRAP.
           </p>
-          <p class="text-white font-sans font-bold">
+          <p class="text-lg text-white font-sans font-bold leading-relaxed">
             Con un ojo agudo para los detalles y una pasión por contar historias, me esfuerzo por ofrecer resultados excepcionales que cautiven a la audiencia.
           </p>
+          <p class="text-lg text-white font-sans font-bold leading-relaxed">
+            Mi trabajo se enfoca en capturar la esencia y energía de cada proyecto, creando piezas visuales que no solo comunican, sino que también emocionan y conectan con el público objetivo.
+          </p>
         </div>
-        <!-- Botón de cerrar -->
-        <button
-          class="px-3 py-2 font-sans bg-primary text-white rounded-lg hover:bg-red-300 transition-colors"
-          id="closeModalButton"
-        >
-          Cerrar
-        </button>
+      </div>
+      
+      <!-- Logo -->
+      <div class="flex justify-center items-center">
+        <img 
+          src="/logotrip.webp" 
+          alt="Tripboyflame Logo"
+          class="w-full max-w-md xl:max-w-lg object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+        />
+      </div>
+    </div>
+
+    <!-- Mobile/Tablet Layout: Logo como background -->
+    <div class="lg:hidden relative rounded-2xl overflow-hidden min-h-[75vh] flex items-center">
+      <!-- Background con logo -->
+      <div class="absolute inset-0">
+        <img 
+          src="/logotrip.webp" 
+          alt="Tripboyflame Logo"
+          class="w-full h-full object-cover opacity-40"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/70"></div>
+      </div>
+      
+      <!-- Contenido sobre el background -->
+      <div class="relative z-10 p-6 sm:p-8 space-y-4 sm:space-y-6">
+        <header>
+          <h1 class="text-3xl sm:text-4xl font-sans font-bold text-primary mb-3">
+            Sobre mí
+          </h1>
+          <p class="text-lg sm:text-xl text-gray-200 font-sans font-bold leading-relaxed">
+            Un saludo, soy Luy, director y productor audiovisual nacido en Medellín, con +4 años de experiencia.
+          </p>
+        </header>
+        
+        <div class="space-y-3 sm:space-y-4">
+          <p class="text-base sm:text-lg text-white font-sans font-bold leading-relaxed">
+            Me especializo en crear contenido de video y audio de alta calidad para diversas plataformas. Mis habilidades incluyen fotografía, dirección de videos, montaje y edición para la industria musical TRAP.
+          </p>
+          <p class="text-base sm:text-lg text-white font-sans font-bold leading-relaxed">
+            Con un ojo agudo para los detalles y una pasión por contar historias, me esfuerzo por ofrecer resultados excepcionales que cautiven a la audiencia.
+          </p>
+          <p class="text-base sm:text-lg text-white font-sans font-bold leading-relaxed">
+            Mi trabajo se enfoca en capturar la esencia y energía de cada proyecto, creando piezas visuales que no solo comunican, sino que también emocionan y conectan con el público objetivo.
+          </p>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- Lógica del modal -->
-  <script>
-    const openModalButton = document.getElementById("openModalButton");
-    const closeModalButton = document.getElementById("closeModalButton");
-    const modal = document.getElementById("modal");
-    const modalContent = document.getElementById("modalContent");
-    const body = document.body;
-
-    if (openModalButton && closeModalButton && modal && modalContent) {
-      openModalButton.addEventListener("click", () => {
-        // Abre el modal: quitar clases que ocultan y agregar las que muestran
-        modal.classList.remove("pointer-events-none", "opacity-0", "opacity-100");
-        modal.classList.add("opacity-100");
-        modalContent.classList.remove("scale-95", "opacity-0");
-        modalContent.classList.add("scale-100", "opacity-100");
-        modal.removeAttribute("inert");
-        modal.removeAttribute("aria-hidden");
-        // Bloquear el scroll
-        body.classList.add("overflow-hidden");
-      });
-
-      closeModalButton.addEventListener("click", () => {
-        // Inicia la animación de cierre en el contenido
-        modalContent.classList.replace("scale-100", "scale-95");
-        modalContent.classList.replace("opacity-100", "opacity-0");
-        // Después de la duración de la transición, remueve la clase que lo muestra en el contenedor
-        setTimeout(() => {
-          modal.classList.remove("opacity-100");
-          modal.classList.add("opacity-0", "pointer-events-none");
-          modal.setAttribute("inert", "");
-          modal.setAttribute("aria-hidden", "true");
-          // Desbloquear el scroll
-          body.classList.remove("overflow-hidden");
-        }, 300);
-      });
-    }
-  </script>
+  
+  <!-- Indicador visual para continuar scrolleando -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div class="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+    </div>
+  </div>
 </section>
