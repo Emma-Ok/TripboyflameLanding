@@ -24,6 +24,7 @@ pnpm-debug.log*
 .idea/
 
 .package-lock.json
+.package.json
 
 .pnpm-lock.yaml
 
