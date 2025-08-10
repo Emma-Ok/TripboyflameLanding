@@ -18,7 +18,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/webp" href="/logotrip.webp" />
+		<link rel="apple-touch-icon" href="/logotrip.webp" />
 		
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
